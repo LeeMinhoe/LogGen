@@ -1,0 +1,23 @@
+{
+  "Header": [
+    {
+      "IP": "10.0.1.28",
+      "Port": 7886,
+      "Protocol": "UDP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "comment": "1. real value",
+      "Type": "MAC addr",
+      "value": "00:01:02:03:04:05"
+    },
+    {
+      "comment": "2. list",
+      "Type": "MAC addr",
+      "value": ["00:01:02:03:04:05", "10:21:32:43:54:65", "FF:FF:FF:FF:FF:FF"]
+    }
+  ]
+}

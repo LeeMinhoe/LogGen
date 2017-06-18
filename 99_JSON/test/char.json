@@ -1,0 +1,22 @@
+{
+  "Header": [
+    {
+      "IP": "10.0.1.28",
+      "Port": 7886,
+      "Protocol": "UDP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "Type": "char",
+      "value": "a"
+    },
+    { 
+      "comment": "list",
+      "Type": "char",
+      "value": [88, 89, 90]
+    }
+  ]
+}

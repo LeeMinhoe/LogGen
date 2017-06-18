@@ -1,0 +1,24 @@
+{
+  "Header": [
+    {
+      "IP": "127.0.0.1",
+      "Port": 50007,
+      "Protocol": "TCP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "Type": "str",
+      "value": "aIasd",
+      "str len": 5
+    },
+    {
+      "Type": "int",
+      "value": 123
+    }
+  ]
+}
+
+

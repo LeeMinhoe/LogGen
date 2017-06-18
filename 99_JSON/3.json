@@ -1,0 +1,27 @@
+{
+  "Header": [
+    {
+      "IP": "127.0.0.1",
+      "Port": 50007,
+      "Protocol": "UDP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "Type": "str",
+      "value": "minhoe1122",
+      "str len": 10
+    },
+    {
+      "Type": "int",
+      "value": 25
+    },
+    {
+      "Type": "float",
+      "value": 3.141592
+    }
+
+  ]
+}

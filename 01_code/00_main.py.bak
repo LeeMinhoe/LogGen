@@ -1,0 +1,95 @@
+from header import *
+import optparse
+import sys
+import os
+import random
+
+def run():
+
+	parser = optparse.OptionParser('main.py')
+
+	# Target option
+	parser.add_option("-d", dest="path", metavar="target dir path", help="target's Directory path")
+	parser.add_option("-f", dest="file", metavar="target json file name", help="target Json file name")
+
+	# dummy option
+	parser.add_option("-t", dest="thread", metavar="thread num", type='int', help="Threads num")
+
+	# pulse time option
+	parser.add_option("-s", dest="steady", metavar="sec", type='float', help="input : float - steady pulse time (sec)")
+	parser.add_option("-r", dest="random", metavar="from to", type='int', nargs=2, help="input : int ,int - random pulse time range from (int) to (int)")
+	parser.add_option("-g", dest="gauss", metavar="avg sd", type='int', nargs = 2, help="input : int, int - Average, Standard Deviation / According to gaussian distributions")
+
+	# loop option
+	parser.add_option("-l", dest="loop", metavar="loop num", type='int', help="input : -1(infinite loop), n(Packet Scenario repeat")
+	
+	(options, args) = parser.parse_args()
+	# Need Modi
+	if len(sys.argv)-1 == 0:
+		printe(parser.usage)
+		exit(1)
+
+	# init target path
+	if options.path == None or options.file == None :
+		printe("not input target variable")
+		exit(1)
+	target_dir_path = os.getcwd() + '/' + options.path
+	target_json_path = options.path + '/' + options.file
+		#### immediatly json file read
+		#### init total_pkt_num
+	total_pkt_num = 5
+
+	print(target_dir_path)
+	print(target_json_path)
+
+	# check dummy or pulse time ### product : Thread Num or Time Table	 
+	  ## option and 
+	if options.thread != None and ( options.steady != None or options.random != None or options.gauss != None ) :
+		printe("#0 check dummy or pulse time option")
+		exit(1)
+
+	if options.thread != None :
+		thread_num = options.thread
+		print("Thread Num : " + str(thread_num))
+	
+	elif options.steady != None or options.random != None or options.gauss != None and options.thread == None:
+		round_cipher = 4
+		Time_table = []
+		if options.steady != None and len(Time_table) == 0 :
+			for i in range(total_pkt_num):
+				Time_table.append(round(options.steady, round_cipher))
+		elif options.steady != None and len(Time_table) != 0:
+			printe("#1 check dummy or pulse time option")
+			exit(1)
+
+		if options.random != None and len(Time_table) == 0 :
+			for i in range(total_pkt_num):
+				Time_table.append(round(random.uniform(options.random[0], options.random[1]), round_cipher))
+		elif options.random != None and len(Time_table) != 0:
+			printe("#2 check dummy or pulse time option")
+			exit(1)
+
+		if options.gauss != None and len(Time_table) == 0 :
+			avg = options.gauss[0]
+			sd = options.gauss[1]
+			for i in range(total_pkt_num):
+				g = random.gauss(avg, sd)
+				Time_table.append(round(-1 * g if g < 0 else g, round_cipher))
+		elif options.gauss != None and len(Time_table) != 0:
+			printe("#3 check dummy or pulse time option")
+			exit(1)
+	
+		print("Time table : " + str(Time_table))
+	else :
+		printe("#4 check dummy or pulse time option")
+		exit(1)
+
+
+	# check loop num
+	if options.loop == None :
+		printe("insert loop option")
+		exit(1)
+
+
+if __name__ == "__main__":
+	run()

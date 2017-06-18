@@ -1,0 +1,23 @@
+{
+  "Header": [
+    {
+      "IP": "10.0.1.28",
+      "Port": 7886,
+      "Protocol": "UDP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    { 
+      "comment": "real value",
+      "Type": "long",
+      "value": 14
+    },
+    { 
+      "comment": "list",
+      "Type": "long",
+      "value": [14, 114, 1114]
+    }
+  ]
+}

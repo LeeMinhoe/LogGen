@@ -1,0 +1,52 @@
+{
+  "Header": [
+    {
+      "IP": "127.0.0.1",
+      "Port": 50007,
+      "Protocol": "TCP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "Type": "str",
+      "value": "minhoe1122",
+      "str len": 10
+    },
+    {
+      "Type": "str",
+      "value": "mhmh1122",
+      "str len": 8
+    },
+    {
+      "Type": "str",
+      "value": "login",
+      "str len": 5
+    },
+    {
+      "Type": "str",
+      "value": "LeeMinhoe",
+      "str len": 9
+    },
+    {
+      "Type": "str",
+      "value": "Seosan",
+      "str len": 6
+    },
+    {
+      "Type": "str",
+      "value": "Korea University",
+      "str len": 16
+    },
+    {
+      "Type": "int",
+      "value": 25
+    },
+    {
+      "Type": "float",
+      "value": 3.141592
+    }
+
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "Header": [
+    {
+      "IP": "10.0.1.28",
+      "Port": 7886,
+      "Protocol": "UDP",
+      "pps": 1,
+      "isRandom": "no"
+    }
+  ],
+  "Data": [
+    {
+      "comment": "1. real value",
+      "Type": "hex",
+      "value": "0x04"
+    },
+    {
+      "comment": "2. list",
+      "Type": "hex",
+      "value": ["0x03", "0x04", "0x05"]
+    },
+    {
+      "comment": "3. Random",
+      "Type": "hex",
+      "value": "Random",
+      "random min": "0x04",
+      "random max": "0x07"
+    }
+  ]
+}
